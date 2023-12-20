@@ -139,9 +139,9 @@ nama_sub_domain.nama_domain.nama_extension
 
 7. Lakukan **composer update** di tempat projekan berada melalui terminal.
 
-![alt](img/screenshot_(1170)_edited.jpg)
+![alt](img/screenshot_(1170).jpg)
 
-8. Lakukan **php artisan migrate** di terminal. Jika ada error sepert ini, tambahkan ini di file **AppServiceProvider.php**.
+1. Lakukan **php artisan migrate** di terminal. Jika ada error sepert ini, tambahkan ini di file **AppServiceProvider.php**.
 
 ```php
 use Illuminate\Support\Facades\Schema;
