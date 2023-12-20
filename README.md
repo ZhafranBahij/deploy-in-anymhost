@@ -39,7 +39,6 @@ ssh-keygen -t rsa -f ~/.ssh/repo_name -b 4096 -C "cpanel_username@your_website_n
 ```
 
 ![alt](img/Screenshot_(1135)_edited.jpg)
-<!-- ![alt](Screenshot_(1135)_edited.jpg) -->
 
 2. Buka CPanel File Manager, lalu buka folder .ssh. Atur config agar jadi 0600 dan isi config di bawah ini. 
 Btw, isi confignya yg aku ketahui hanya bisa 1 IdentityFile saja.
@@ -48,7 +47,9 @@ Btw, isi confignya yg aku ketahui hanya bisa 1 IdentityFile saja.
 Host *
     IdentityFile ~/.ssh/repo_name
 ```
+
 ![alt](img/Screenshot_(1142).jpg)
+
 ![alt](img/Screenshot_(1136).jpg)
 
 3. Buka repo github > settings > deploy keys > add new
@@ -57,7 +58,7 @@ Host *
 
 4. Isi key dgn public key. Public key bisa diakses di folder .ssh, lalu cari yg "nama_repo.pub".
 
-![alt](img/screenshot_(1143)_edited.jpg)
+![alt](img/Screenshot_(1143)_edited.jpg)
 
 5. Setelah itu, coba cek menggunakan command di bawah.
 
@@ -65,7 +66,7 @@ Host *
 ssh -T -p 443 git@ssh.github.com
 ```
 
-![alt](img/screenshot_(1139).jpg)
+![alt](img/Screenshot_(1139).jpg)
 
 6. Git clone di terminal dgn
 
@@ -82,11 +83,11 @@ git clone https://github.com/nama_user_github/nama_repo.git
 ### Sub Domain 
 1. Masuk ke Cpanel, lalu search menu Domain.
 
-![alt](img/screenshot_(1155).jpg)
+![alt](img/Screenshot_(1155).jpg)
 
 2. Nantinya akan ada daftar domain serta subdomain yg kita punya. Silahkan klik "Create a New Domain".
 
-![alt](img/screenshot_(1156).jpg)
+![alt](img/Screenshot_(1156).jpg)
 
 3. Buat domain seperti ini. Lalu, penempatan document root seperti ini. Kalau sudah tekan submit.
 
@@ -98,48 +99,48 @@ nama_sub_domain.nama_domain.nama_extension
 /public_html/nama_sub_domain.nama_domain.nama_extension
 ```
 
-![alt](img/screenshot_(1157).jpg)
+![alt](img/Screenshot_(1157).jpg)
 
 4. Ketika prosesnya kelar, akan muncul pesan seperti ini.
 
-![alt](img/screenshot_(1158).jpg)
+![alt](img/Screenshot_(1158).jpg)
 
 5. Kalau sudah, tinggal pindahkan isi web yg diinginkan ke dalam folder sub domain.
 
-![alt](img/screenshot_(1159).jpg)
+![alt](img/Screenshot_(1159).jpg)
 
 6. Hasilnya seperti ini.
 
-![alt](img/screenshot_(1160).jpg)
+![alt](img/Screenshot_(1160).jpg)
 
 ### Deploy Laravel
 1. Lakukan git clone kepada folder yg dituju. Kalau saya cloning di folder laravel_app.
 
-![alt](img/screenshot_(1183).jpg)
+![alt](img/Screenshot_(1183).jpg)
 
 2. Buat DB-nya terlebih dahulu. Masuk ke menu Database > MySQL Databases.
 
-![alt](img/screenshot_(1184).jpg)
+![alt](img/Screenshot_(1184).jpg)
 
 3. Buat database dgn cara masukkan nama Database lalu tekan tombol **Create Database**
 
-![alt](img/screenshot_(1185).jpg)
+![alt](img/Screenshot_(1185).jpg)
 
 4. Buat user.
 
-![alt](img/screenshot_(1186).jpg)
+![alt](img/Screenshot_(1186).jpg)
 
 5. Lakukan **Add User To Database**. Agar database bisa diakses nantinya.
 
-![alt](img/screenshot_(1187).jpg)
+![alt](img/Screenshot_(1187).jpg)
 
 6. Atur **.env** di folder project laravelnya
 
-![alt](img/screenshot_(1177)_edited.jpg)
+![alt](img/Screenshot_(1177)_edited.jpg)
 
 7. Lakukan **composer update** di tempat projekan berada melalui terminal.
 
-![alt](img/screenshot_(1170).jpg)
+![alt](img/Screenshot_(1170).jpg)
 
 1. Lakukan **php artisan migrate** di terminal. Jika ada error sepert ini, tambahkan ini di file **AppServiceProvider.php**.
 
@@ -157,25 +158,25 @@ public function boot()
 }
 ```
 
-![alt](img/screenshot_(1175).jpg)
+![alt](img/Screenshot_(1175).jpg)
 
 9. Lakukan lagi **php artisan migrate**.
 
-![alt](img/screenshot_(1176).jpg)
+![alt](img/Screenshot_(1176).jpg)
 
 10. Buat subdomainnya. Lalu pindahkan isi dari folder public ke subdomain.
 
 11. Ubah lokasi directory kedua item tersebut di **index.php** menuju ke directory sebenarnya. Untuk contohnya, gambar di bawah adalah hasil pengubahan. Lokasi **folder projek laravel** terletak di **folder laravel_app** . **Folder laravel_app** terletak di home. Lalu, **file index.php**  terletak di **folder subdomain**. Lalu, lokasi **folder subdomain** ada di dalam **public_html**. **public_html** terletak di **home**
 
-![alt](img/screenshot_(1169).jpg)
+![alt](img/Screenshot_(1169).jpg)
 
 12. Seperti ini penempatan **index.php**
 
-![alt](img/screenshot_(1188).jpg)
+![alt](img/Screenshot_(1188).jpg)
 
 13. Kalau berhasil, bisa menampilkan page yg sesuai keinginan.
 
-![alt](img/screenshot_(1181).jpg)
+![alt](img/Screenshot_(1181).jpg)
 
 ## Sumber Tutorial
 
